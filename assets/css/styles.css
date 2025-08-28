@@ -1,0 +1,236 @@
+/* Custom styles for Venkatappagari Jagadeesh Reddy Portfolio */
+:root {
+  --hero-grad-start: #eef4ff;
+  --hero-grad-end: #ffffff;
+  --indigo: #6366f1;
+  --violet: #8b5cf6;
+  --pink: #ec4899;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --shadow-soft: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+.bg-hero {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, 0.15), transparent 50%),
+              radial-gradient(1000px 600px at 90% 0%, rgba(236, 72, 153, 0.12), transparent 45%),
+              linear-gradient(180deg, var(--hero-grad-start), var(--hero-grad-end));
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.progress {
+  height: 10px;
+}
+
+footer .link-secondary:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  .py-lg-6 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+/******** Dark mode adjustments ********/
+[data-bs-theme="dark"] .bg-hero {
+  --hero-grad-start: #0b0f17;
+  --hero-grad-end: #101826;
+}
+
+/* Subtle card hover */
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 150ms ease;
+}
+
+/* Profile photo styling */
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-photo-sm {
+  max-width: 180px;
+}
+
+/* ---------------- Gradient system & glassmorphism ---------------- */
+.gradient-text {
+  background: linear-gradient(90deg, var(--indigo), var(--violet), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(90deg, var(--indigo), var(--violet), var(--pink));
+  color: #fff;
+  border: 0;
+  box-shadow: var(--shadow-soft);
+}
+.btn-gradient:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+}
+
+.navbar.glass-nav {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+[data-bs-theme="dark"] .navbar.glass-nav {
+  background: rgba(16, 24, 38, 0.6) !important;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0.25rem;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--indigo), var(--pink));
+}
+
+footer {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--indigo), var(--violet), var(--pink)) 1;
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-title { animation: fadeUp 700ms ease 50ms both; }
+.animate-hero-sub { animation: fadeUp 800ms ease 120ms both; }
+.animate-hero-cta { animation: fadeUp 900ms ease 180ms both; }
+
+.hover-float:hover { transform: translateY(-4px); }
+
+.icon-hover:hover { transform: translateY(-2px) scale(1.05); transition: transform 150ms ease; }
+
+.card-glow {
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+.card-glow:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(99, 102, 241, 0.25);
+  filter: drop-shadow(0 0 0.35rem rgba(236, 72, 153, 0.45));
+}
+
+.project-header {
+  background: linear-gradient(90deg, rgba(99,102,241,0.18), rgba(139,92,246,0.18), rgba(236,72,153,0.18));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* ---------------- Certifications ---------------- */
+.cert-card {
+  background: linear-gradient(135deg, rgba(99,102,241,0.9), rgba(139,92,246,0.95), rgba(236,72,153,0.9));
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(99,102,241,0.35);
+  filter: drop-shadow(0 0 0.35rem rgba(236,72,153,0.55));
+}
+.cert-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Optional color variants if you want distinct hues per card */
+.cert-blue { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+.cert-purple { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.cert-teal { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.cert-orange { background: linear-gradient(135deg, #0ea5e9, #0891b2); }
+
+/* ---------------- Education cards ---------------- */
+.education-card {
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(99,102,241,0.2);
+  filter: drop-shadow(0 0 0.25rem rgba(236,72,153,0.3));
+}
+
+.education-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.15));
+  color: var(--indigo);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.cgpa-badge {
+  background: linear-gradient(90deg, var(--indigo), var(--violet), var(--pink));
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+
+/* ---------------- Skills badges ---------------- */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  box-shadow: var(--shadow-soft);
+}
+[data-bs-theme="dark"] .skill-badge { background: rgba(99,102,241,0.18); }
+.skill-badge i { color: var(--indigo); }
+
+/* ---------------- Contact form ---------------- */
+.form-control, .form-select {
+  border: 1px solid rgba(99,102,241,0.35);
+}
+.form-control:focus, .form-select:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+}
+.input-group-text {
+  background: linear-gradient(90deg, rgba(99,102,241,.15), rgba(236,72,153,.15));
+  border: 1px solid rgba(99,102,241,0.35);
+}
