@@ -221,6 +221,32 @@ footer {
 [data-bs-theme="dark"] .skill-badge { background: rgba(99,102,241,0.18); }
 .skill-badge i { color: var(--indigo); }
 
+/* ---------------- Responsive badge ---------------- */
+.responsive-badge {
+  font-size: 1rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .responsive-badge {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem !important;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem !important;
+    line-height: 1.2;
+  }
+}
+
 /* ---------------- Contact form ---------------- */
 .form-control, .form-select {
   border: 1px solid rgba(99,102,241,0.35);
